@@ -17,11 +17,11 @@ pipeline {
       }
       stage("Tag and Push") {
          steps {
-            {
+            
                sh "docker tag jenkins-pipeline_web:latest sungwookai/jenkins-app:${BUILD_NUMBER}"
                sh "docker login -u sungwookai -p dckr_pat_uL6Q31QmNiaJp9vIP5tXGffpjYQ"
                sh "docker push sungwookai/jenkins-app:${BUILD_NUMBER}"
-            }
+   
          }
       }
       stage("deploy") {
