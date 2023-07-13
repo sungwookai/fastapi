@@ -22,9 +22,9 @@ pipeline {
             usernameVariable: 'DOCKER_USER_ID', 
             passwordVariable: 'DOCKER_USER_PASSWORD'
             ]]) {
-               sh "docker tag jenkins-pipeline_web:latest bit1010/jenkins-app:${BUILD_NUMBER}"
-               sh "docker login -u bit1010 -p ${DOCKER_USER_PASSWORD}"
-               sh "docker push ${DOCKER_USER_ID}/jenkins-app:${BUILD_NUMBER}"
+               sh "docker tag jenkins-pipeline_web:latest sungwookai/jenkins-app:${BUILD_NUMBER}"
+               sh "docker login -u bit1010 -p tjddnr3306"
+               sh "docker push sungwookai/jenkins-app:${BUILD_NUMBER}"
             }
          }
       }
