@@ -17,11 +17,7 @@ pipeline {
       }
       stage("Tag and Push") {
          steps {
-            withCredentials([[$class: 'UsernamePasswordMultiBinding',
-            credentialsId: 'docker-hub', 
-            usernameVariable: 'DOCKER_USER_ID', 
-            passwordVariable: 'DOCKER_USER_PASSWORD'
-            ]]) {
+            {
                sh "docker tag jenkins-pipeline_web:latest sungwookai/jenkins-app:${BUILD_NUMBER}"
                sh "docker login -u sungwookai -p dckr_pat_uL6Q31QmNiaJp9vIP5tXGffpjYQ"
                sh "docker push sungwookai/jenkins-app:${BUILD_NUMBER}"
